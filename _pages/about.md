@@ -19,5 +19,5 @@ social: true # includes social icons at the bottom of the page
 ---
 
 I am a 4th-year undergraduate student major in Engineering Science - Machine Intelligence at the University of Toronto. 
-I am currently supervised by Prof. Colin Raffel as a research intern at Vector Institute
+I am currently supervised by [Prof. Colin Raffel](https://colinraffel.com/) as a research intern at Vector Institute. 
 I have also worked at Advanced Electronics and Photonics Research Center at National Research Council Canada, supervised by Dr. Guocheng Liu.
