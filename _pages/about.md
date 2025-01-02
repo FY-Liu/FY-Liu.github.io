@@ -6,7 +6,7 @@ subtitle: <a href='https://www.utoronto.ca/'>University of Toronto</a>, <a href=
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: fypic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p> Vector Institute </p><br />
