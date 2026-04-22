@@ -15,15 +15,67 @@
       abstract={The influence of contextual input on the behavior of large language models (LLMs) has prompted the development of context attribution methods that aim to quantify each context span's effect on an LLM's generations. The leave-one-out (LOO) error, which measures the change in the likelihood of the LLM's response when a given span of the context is removed, provides a principled way to perform context attribution, but can be prohibitively expensive to compute for large models. In this work, we introduce AttriBoT, a series of novel techniques for efficiently computing an approximation of the LOO error for context attribution. Specifically, AttriBoT uses cached activations to avoid redundant operations, performs hierarchical attribution to reduce computation, and emulates the behavior of large target models with smaller proxy models. Taken together, AttriBoT can provide a >300x speedup while remaining more faithful to a target model's LOO error than prior context attribution methods. This stark increase in performance makes computing context attributions for a given response 30x faster than generating the response itself, empowering real-world applications that require computing attributions at scale. We release a user-friendly and efficient implementation of AttriBoT to enable efficient LLM interpretability as well as encourage future development of efficient context attribution methods.}
 }
 
-@article{lin2025efficientmodeldevelopmentfinetuning,
+@inproceedings{lin-etal-2025-efficient,
+    abbr={EMNLP},
+    title = "Efficient Model Development through Fine-tuning Transfer",
+    author = "Lin, Pin-Jie  and
+      Balasubramanian, Rishab  and
+      Liu, Fengyuan  and
+      Kandpal, Nikhil  and
+      Vu, Tu",
+    editor = "Christodoulopoulos, Christos  and
+      Chakraborty, Tanmoy  and
+      Rose, Carolyn  and
+      Peng, Violet",
+    booktitle = "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+    month = nov,
+    year = "2025",
+    address = "Suzhou, China",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.emnlp-main.131/",
+    doi = "10.18653/v1/2025.emnlp-main.131",
+    pages = "2617--2636",
+    ISBN = "979-8-89176-332-6",
+    selected={true},
+    abstract = "Modern LLMs face a major obstacle: each new pre-trained model version requires expensive and repetitive alignment. We propose a method that transfers fine-tuning updates across model versions. The key idea is to extract the *diff vector*, which is the difference in parameters induced by fine-tuning, from a *source* model version and apply it to the base of a different *target* version. We show that transferring diff vectors significantly improves the target base model, often achieving performance comparable to its fine-tuned counterpart. For example, applying the fine-tuning updates from Llama 3.0 8B to Llama 3.1 8B increases accuracy by 46.9{\%} on IFEval and 15.7{\%} on LiveCodeBench without further training, surpassing Llama 3.1 8B Instruct. In multilingual settings, we also observe accuracy gains relative to Llama 3.1 8B Instruct, including 4.7{\%} for Malagasy and 15.5{\%} for Turkish on Global MMLU. Our controlled experiments reveal that fine-tuning transfer works best when source and target models are linearly connected in parameter space. We also show that this transfer provides a stronger and more efficient starting point for subsequent fine-tuning. Finally, we propose an iterative *recycling-then-finetuning* approach for continuous model development, which improves both efficiency and effectiveness. Our findings suggest that fine-tuning transfer is a viable strategy to reduce training costs while maintaining model performance."
+}
+
+@inproceedings{
+rinaldi2026gradientsign,
+abbr={ICLR},
+title={Gradient-Sign Masking for Task Vector Transport Across Pre-Trained Models},
+author={Filippo Rinaldi and Aniello Panariello and Giacomo Salici and Fengyuan Liu and Marco Ciccone and Angelo Porrello and Simone Calderara},
+booktitle={The Fourteenth International Conference on Learning Representations},
+year={2026},
+url={https://openreview.net/forum?id=CQnpxZNMvT},
+code={https://github.com/fillo-rinaldi/GradFix},
+selected={true},
+abstract={When a new release of a foundation model is published, practitioners typically need to repeat fine-tuning, even if the same task was already tackled in the previous version. A promising alternative is to reuse the parameter changes (i.e., task vectors) that capture how a model adapts to a specific task. However, these vectors often fail to transfer across different pre-trained models because their parameter spaces are misaligned. In this work, we show that successful transfer depends strongly on the gradient-sign structure of the new model. Based on this insight, we propose GradFix, which approximates the ideal sign structure and leverages it to transfer knowledge using only a handful of labeled samples. Notably, this requires no additional fine-tuning: we only compute a few target-model gradients without parameter updates and mask the source task vector accordingly. This yields an update that is locally aligned with the target loss landscape, effectively rebasing the task vector onto the new pre-training. We provide a theoretical guarantee that our method ensures first-order descent. Empirically, we demonstrate significant performance gains on vision and language benchmarks, consistently outperforming naive task vector addition and few-shot fine-tuning. We further show that transporting task vectors improves multi-task and multi-source model merging.}
+}
+
+@article{altıntaş2025toksuitemeasuringimpacttokenizer,
       abbr={arXiv},
-      title={Efficient Model Development through Fine-tuning Transfer}, 
-      author={Pin-Jie Lin and Rishab Balasubramanian and Fengyuan Liu and Nikhil Kandpal and Tu Vu},
+      title={TokSuite: Measuring the Impact of Tokenizer Choice on Language Model Behavior},
+      author={Gül Sena Altıntaş and Malikeh Ehghaghi and Brian Lester and Fengyuan Liu and Wanru Zhao and Marco Ciccone and Colin Raffel},
       year={2025},
-      url={https://arxiv.org/abs/2503.20110}, 
+      arxiv={2512.20757},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
       selected={true},
-      pdf={Efficient Model Development through Fine-tuning Transfer.pdf},
-      arxiv={2503.20110},
-      code={https://github.com/pjlintw/finetuning-transfer},
-      abstract={Modern LLMs struggle with efficient updates, as each new pretrained model version requires repeating expensive alignment processes. This challenge also applies to domain- or language-specific models, where fine-tuning on specialized data must be redone for every new base model release. In this paper, we explore the transfer of fine-tuning updates between model versions. Specifically, we derive the diff vector from one source model version, which represents the weight changes from fine-tuning, and apply it to the base model of a different target version. Through empirical evaluations on various open-weight model versions, we show that transferring diff vectors can significantly improve the target base model, often achieving performance comparable to its fine-tuned counterpart. For example, reusing the fine-tuning updates from Llama 3.0 8B leads to an absolute accuracy improvement of 10.7% on GPQA over the base Llama 3.1 8B without additional training, surpassing Llama 3.1 8B Instruct. In a multilingual model development setting, we show that this approach can significantly increase performance on target-language tasks without retraining, achieving an absolute improvement of 4.7% and 15.5% on Global MMLU for Malagasy and Turkish, respectively, compared to Llama 3.1 8B Instruct. Our controlled experiments reveal that fine-tuning transfer is most effective when the source and target models are linearly connected in the parameter space. Additionally, we demonstrate that fine-tuning transfer offers a stronger and more computationally efficient starting point for further fine-tuning. Finally, we propose an iterative recycling-then-finetuning approach for continuous model development, which improves both efficiency and effectiveness. Our findings suggest that fine-tuning transfer is a viable strategy to reduce training costs while maintaining model performance.}
+      url={https://arxiv.org/abs/2512.20757}, 
+      abstract={Tokenizers provide the fundamental basis through which text is represented and processed by language models (LMs). Despite the importance of tokenization, its role in LM performance and behavior is poorly understood due to the challenge of measuring the impact of tokenization in isolation. To address this need, we present TokSuite, a collection of models and a benchmark that supports research into tokenization's influence on LMs. Specifically, we train fourteen models that use different tokenizers but are otherwise identical using the same architecture, dataset, training budget, and initialization. Additionally, we curate and release a new benchmark that specifically measures model performance subject to real-world perturbations that are likely to influence tokenization. Together, TokSuite allows robust decoupling of the influence of a model's tokenizer, supporting a series of novel findings that elucidate the respective benefits and shortcomings of a wide range of popular tokenizers.}
+}
+
+
+@article{liu2026bridgepredictinghumantask,
+      abbr={arXiv},
+      title={BRIDGE: Predicting Human Task Completion Time From Model Performance}, 
+      author={Fengyuan Liu and Jay Gala and Nilaksh and Dzmitry Bahdanau and Siva Reddy and Hugo Larochelle},
+      year={2026},
+      arxiv={2602.07267},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      selected={true},
+      url={https://arxiv.org/abs/2602.07267}, 
+      abstract={Evaluating the real-world capabilities of AI systems requires grounding benchmark performance in human-interpretable measures of task difficulty. Existing approaches that rely on direct human task completion time annotations are costly, noisy, and difficult to scale across benchmarks. In this work, we propose BRIDGE, a unified psychometric framework that learns the latent difficulty scale from model responses and anchors it to human task completion time. Using a two-parameter logistic Item Response Theory model, we jointly estimate latent task difficulty and model capability from model performance data across multiple benchmarks. We demonstrate that latent task difficulty varies linearly with the logarithm of human completion time, allowing human task completion time to be inferred for new benchmarks from model performance alone. Leveraging this alignment, we forecast frontier model capabilities in terms of human task length and independently reproduce METR's exponential scaling results, with the 50% solvable task horizon doubling approximately every 6 months.}
 }
