@@ -60,12 +60,12 @@ abstract={When a new release of a foundation model is published, practitioners t
       title={TokSuite: Measuring the Impact of Tokenizer Choice on Language Model Behavior},
       author={Gül Sena Altıntaş and Malikeh Ehghaghi and Brian Lester and Fengyuan Liu and Wanru Zhao and Marco Ciccone and Colin Raffel},
       year={2026},
+      booktitle={Forty-third International Conference on Machine Learning},
       arxiv={2512.20757},
       archivePrefix={arXiv},
       primaryClass={cs.CL},
       selected={true},
       url={https://arxiv.org/abs/2512.20757},
-      booktitle={Forty-third International Conference on Machine Learning},
       website={https://huggingface.co/toksuite},
       code={https://github.com/r-three/Tokenizers},
       abstract={Tokenizers provide the fundamental basis through which text is represented and processed by language models (LMs). Despite the importance of tokenization, its role in LM performance and behavior is poorly understood due to the challenge of measuring the impact of tokenization in isolation. To address this need, we present TokSuite, a collection of models and a benchmark that supports research into tokenization's influence on LMs. Specifically, we train fourteen models that use different tokenizers but are otherwise identical using the same architecture, dataset, training budget, and initialization. Additionally, we curate and release a new benchmark that specifically measures model performance subject to real-world perturbations that are likely to influence tokenization. Together, TokSuite allows robust decoupling of the influence of a model's tokenizer, supporting a series of novel findings that elucidate the respective benefits and shortcomings of a wide range of popular tokenizers.}
@@ -73,16 +73,16 @@ abstract={When a new release of a foundation model is published, practitioners t
 
 
 @article{liu2026bridgepredictinghumantask,
-      abbr={arXiv},
+      abbr={ICML},
       title={BRIDGE: Predicting Human Task Completion Time From Model Performance}, 
       author={Fengyuan Liu and Jay Gala and Nilaksh and Dzmitry Bahdanau and Siva Reddy and Hugo Larochelle},
       year={2026},
+      booktitle={Forty-third International Conference on Machine Learning},
       arxiv={2602.07267},
       archivePrefix={arXiv},
       primaryClass={cs.AI},
       selected={true},
-      url={https://arxiv.org/abs/2602.07267}, 
-      booktitle={Forty-third International Conference on Machine Learning},
+      url={https://arxiv.org/abs/2602.07267},
       website={https://mcgill-nlp.github.io/BRIDGE/},
       code={https://github.com/McGill-NLP/BRIDGE},
       abstract={Evaluating the real-world capabilities of AI systems requires grounding benchmark performance in human-interpretable measures of task difficulty. Existing approaches that rely on direct human task completion time annotations are costly, noisy, and difficult to scale across benchmarks. In this work, we propose BRIDGE, a unified psychometric framework that learns the latent difficulty scale from model responses and anchors it to human task completion time. Using a two-parameter logistic Item Response Theory model, we jointly estimate latent task difficulty and model capability from model performance data across multiple benchmarks. We demonstrate that latent task difficulty varies linearly with the logarithm of human completion time, allowing human task completion time to be inferred for new benchmarks from model performance alone. Leveraging this alignment, we forecast frontier model capabilities in terms of human task length and independently reproduce METR's exponential scaling results, with the 50% solvable task horizon doubling approximately every 6 months.}
