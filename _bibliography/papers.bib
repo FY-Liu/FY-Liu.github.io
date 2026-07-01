@@ -37,6 +37,7 @@
     pages = "2617--2636",
     ISBN = "979-8-89176-332-6",
     selected={true},
+    code={https://github.com/pjlintw/finetuning-transfer},
     abstract = "Modern LLMs face a major obstacle: each new pre-trained model version requires expensive and repetitive alignment. We propose a method that transfers fine-tuning updates across model versions. The key idea is to extract the *diff vector*, which is the difference in parameters induced by fine-tuning, from a *source* model version and apply it to the base of a different *target* version. We show that transferring diff vectors significantly improves the target base model, often achieving performance comparable to its fine-tuned counterpart. For example, applying the fine-tuning updates from Llama 3.0 8B to Llama 3.1 8B increases accuracy by 46.9{\%} on IFEval and 15.7{\%} on LiveCodeBench without further training, surpassing Llama 3.1 8B Instruct. In multilingual settings, we also observe accuracy gains relative to Llama 3.1 8B Instruct, including 4.7{\%} for Malagasy and 15.5{\%} for Turkish on Global MMLU. Our controlled experiments reveal that fine-tuning transfer works best when source and target models are linearly connected in parameter space. We also show that this transfer provides a stronger and more efficient starting point for subsequent fine-tuning. Finally, we propose an iterative *recycling-then-finetuning* approach for continuous model development, which improves both efficiency and effectiveness. Our findings suggest that fine-tuning transfer is a viable strategy to reduce training costs while maintaining model performance."
 }
 
@@ -50,19 +51,23 @@ year={2026},
 url={https://openreview.net/forum?id=CQnpxZNMvT},
 code={https://github.com/fillo-rinaldi/GradFix},
 selected={true},
+code={https://github.com/fillo-rinaldi/GradFix},
 abstract={When a new release of a foundation model is published, practitioners typically need to repeat fine-tuning, even if the same task was already tackled in the previous version. A promising alternative is to reuse the parameter changes (i.e., task vectors) that capture how a model adapts to a specific task. However, these vectors often fail to transfer across different pre-trained models because their parameter spaces are misaligned. In this work, we show that successful transfer depends strongly on the gradient-sign structure of the new model. Based on this insight, we propose GradFix, which approximates the ideal sign structure and leverages it to transfer knowledge using only a handful of labeled samples. Notably, this requires no additional fine-tuning: we only compute a few target-model gradients without parameter updates and mask the source task vector accordingly. This yields an update that is locally aligned with the target loss landscape, effectively rebasing the task vector onto the new pre-training. We provide a theoretical guarantee that our method ensures first-order descent. Empirically, we demonstrate significant performance gains on vision and language benchmarks, consistently outperforming naive task vector addition and few-shot fine-tuning. We further show that transporting task vectors improves multi-task and multi-source model merging.}
 }
 
 @article{altıntaş2025toksuitemeasuringimpacttokenizer,
-      abbr={arXiv},
+      abbr={ICML},
       title={TokSuite: Measuring the Impact of Tokenizer Choice on Language Model Behavior},
       author={Gül Sena Altıntaş and Malikeh Ehghaghi and Brian Lester and Fengyuan Liu and Wanru Zhao and Marco Ciccone and Colin Raffel},
-      year={2025},
+      year={2026},
       arxiv={2512.20757},
       archivePrefix={arXiv},
       primaryClass={cs.CL},
       selected={true},
-      url={https://arxiv.org/abs/2512.20757}, 
+      url={https://arxiv.org/abs/2512.20757},
+      booktitle={Forty-third International Conference on Machine Learning},
+      website={https://huggingface.co/toksuite},
+      code={https://github.com/r-three/Tokenizers},
       abstract={Tokenizers provide the fundamental basis through which text is represented and processed by language models (LMs). Despite the importance of tokenization, its role in LM performance and behavior is poorly understood due to the challenge of measuring the impact of tokenization in isolation. To address this need, we present TokSuite, a collection of models and a benchmark that supports research into tokenization's influence on LMs. Specifically, we train fourteen models that use different tokenizers but are otherwise identical using the same architecture, dataset, training budget, and initialization. Additionally, we curate and release a new benchmark that specifically measures model performance subject to real-world perturbations that are likely to influence tokenization. Together, TokSuite allows robust decoupling of the influence of a model's tokenizer, supporting a series of novel findings that elucidate the respective benefits and shortcomings of a wide range of popular tokenizers.}
 }
 
@@ -77,5 +82,8 @@ abstract={When a new release of a foundation model is published, practitioners t
       primaryClass={cs.AI},
       selected={true},
       url={https://arxiv.org/abs/2602.07267}, 
+      booktitle={Forty-third International Conference on Machine Learning},
+      website={https://mcgill-nlp.github.io/BRIDGE/},
+      code={https://github.com/McGill-NLP/BRIDGE},
       abstract={Evaluating the real-world capabilities of AI systems requires grounding benchmark performance in human-interpretable measures of task difficulty. Existing approaches that rely on direct human task completion time annotations are costly, noisy, and difficult to scale across benchmarks. In this work, we propose BRIDGE, a unified psychometric framework that learns the latent difficulty scale from model responses and anchors it to human task completion time. Using a two-parameter logistic Item Response Theory model, we jointly estimate latent task difficulty and model capability from model performance data across multiple benchmarks. We demonstrate that latent task difficulty varies linearly with the logarithm of human completion time, allowing human task completion time to be inferred for new benchmarks from model performance alone. Leveraging this alignment, we forecast frontier model capabilities in terms of human task length and independently reproduce METR's exponential scaling results, with the 50% solvable task horizon doubling approximately every 6 months.}
 }
